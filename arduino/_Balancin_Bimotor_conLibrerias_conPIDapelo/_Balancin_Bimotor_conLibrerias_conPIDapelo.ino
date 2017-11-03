@@ -64,7 +64,7 @@ void setup() {
   cf_lib.begin(accel_data);
 
   t2 = micros();
-  Serial.println("   ...IMU configurada ");
+  Serial.println("   ...IMU configurada");
   Serial.print("   ...tiempo empleado: "); Serial.print((t2 - t1)/1000000.0f, 3); Serial.println("s");
 
   Serial.println("Introduce la letra 'S' para continuar");
@@ -94,8 +94,9 @@ ISR(TIMER2_COMPA_vect) {
   
     int output = compute_PID(&myPID, error); 
     Serial.print(" "); Serial.println(output);
-    OCR1A = 1150 + output; // add motor offset
-    OCR1B = 1150 - output; // add motor offset
+    // motor offset = 1150
+    OCR1A = 1150 + output; 
+    OCR1B = 1150 - output; 
     //Serial.print(" "); Serial.print(OCR1A);
     //Serial.print(" "); Serial.println(OCR1B);
   
@@ -181,7 +182,7 @@ void configureT2_Temp(){
 
   // Preescalado del reloj 1/1024, con frecuencia del reloj 16MHz
   // t_TCNT2 = 1 / (16MHz / 1024) = 64us
-  // Se quiere que se produzca una interrupción cada 1ms
+  // Se quiere una interrupción cada 1ms
   // OCR2A · 64us = 1ms -> OCR2A = 15.625 ~ 16
   
   // Table 18-8. Waveform Generation Mode Bit Description
