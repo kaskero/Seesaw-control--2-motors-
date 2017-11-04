@@ -1,9 +1,9 @@
 #include <LSM6.h>
-#include <IMU.h>
+#include <IMU_v5.h>
 #include <CF_lib.h>
 
 LSM6 imu;
-IMU imu_lib;
+IMU_v5 imu_lib;
 CF_lib cf_lib;
 
 const int ppm_R_pin = 9, 
@@ -60,7 +60,7 @@ void setup() {
   imu_lib.getOffsetNoise();
   delay(100);
   
-  int* accel_data = imu_lib.read_Acc();
+  int* accel_data = imu_lib.Read_Acc();
   cf_lib.begin(accel_data);
 
   t2 = micros();
@@ -76,8 +76,8 @@ void setup() {
 }
 
 void loop() {
-  int* accel_data = imu_lib.read_Acc();
-  int* gyro_data = imu_lib.read_Gyro();
+  int* accel_data = imu_lib.Read_Acc();
+  int* gyro_data = imu_lib.Read_Gyro();
   int* noise_data = imu_lib.Get_Noise();
 
   input = cf_lib.Compute_Pitch(accel_data, *(gyro_data+1), *(noise_data+4));  
