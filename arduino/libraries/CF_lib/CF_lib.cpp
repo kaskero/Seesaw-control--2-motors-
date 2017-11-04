@@ -28,7 +28,7 @@ float CF_lib::Compute_Pitch(int* accel, int gyro_y, int data_noise) {
 	float dt = (micros() - timer) / 1000000.0f;
 	if(gyro_y > data_noise || gyro_y < -data_noise) {
 		// Trapezoidal rule for integrating angular velocity
-		// 17.50mdps/digit is L3G20H gyro's sensitivity for 500 dps scale
+		// 17.50mdps/digit is L3G20H/LSM6 gyro's sensitivity for 500 dps scale
 		float rotAng = 0.0175f * ((gyro_y + prev_gyro_y) / 2) * dt;
 		pitch += rotAng; 
 		pitchGyro += rotAng;
