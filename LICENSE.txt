@@ -1,6 +1,6 @@
 3D PRINTS
 
-Seesaw-control--2-motors- (3D prints) by Adrián Jiménez is licensed under a Creative Commons Attribution 4.0 Internacional License.
+Seesaw control with 2 motors (3D prints) by Adrián Jiménez is licensed under a Creative Commons Attribution 4.0 Internacional License.
 
 ARDUINO CODE
 
