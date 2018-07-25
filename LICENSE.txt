@@ -1,6 +1,6 @@
 3D PRINTS
 
-Ball & Beam control (3D prints) by Adrián Jiménez is licensed under a Creative Commons Attribution 4.0 Internacional License.
+Seesaw-control--2-motors- (3D prints) by Adrián Jiménez is licensed under a Creative Commons Attribution 4.0 Internacional License.
 
 ARDUINO CODE
 
